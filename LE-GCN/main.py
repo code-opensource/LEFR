@@ -86,7 +86,7 @@ def output():
 def train():
     model.train()
     optimizer.zero_grad()
-    modProb = model(data.trainFeature)
+    modProb = model(data.trainFeature) 
     L = L_m(modProb, trainLabel)
     R = torch.trace(modProb.T @ data.B @ modProb)
     target = L + config.lambda_ * R
